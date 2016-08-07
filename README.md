@@ -2,9 +2,8 @@
 
 Run the following npm command for required installations:
 
-* npm install -g typescript gulp-cli
-* npm install -g typings
-* npm install --save-dev gulp gulp-typescript
+* npm install
+* npm install gulp-cli
 
 
 To run the project:
