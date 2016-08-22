@@ -1,0 +1,30 @@
+<html>
+<head>
+    <title>Offerciti</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Load libraries -->
+    <!-- Shim(s) for older browsers -->
+    <!--<script src="lib/es6-shim/es6-shim.min.js"></script>-->
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css">
+
+    <link rel="stylesheet" href="app/shared/styles/common.css">
+
+    <script src="lib/zone.js/dist/zone.js"></script>
+    <script src="lib/reflect-metadata/Reflect.js"></script>
+    <script src="lib/systemjs/dist/system.src.js"></script>
+
+    <!-- Configure SystemJS -->
+    <script src="systemjs.config.js"></script>
+    <script>
+        System.import('app')
+                .then(null, console.error.bind(console));
+    </script>
+
+</head>
+
+<body>
+    <offerciti>Loading...</offerciti>
+</body>
+
+</html>

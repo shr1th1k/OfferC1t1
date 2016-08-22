@@ -1,0 +1,26 @@
+///////////////////////////////////////////////////////////////////////////////
+//// Cross browser supported css or any scss functions can be written here ////
+///////////////////////////////////////////////////////////////////////////////
+
+@mixin border-radius ($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+      -o-border-radius: $radius;
+          border-radius: $radius;
+}
+
+@mixin transition ($prop, $duration, $type) {
+    -webkit-transition: $prop $duration $type;
+       -moz-transition: $prop $duration $type;
+         -o-transition: $prop $duration $type;
+            transition: $prop $duration $type;
+}
+
+
+@mixin box-shadow ($x1, $y1, $z1, $color, $style) {
+    -webkit-box-shadow: $x1 $y1 $z1 $color $style;
+       -moz-box-shadow: $x1 $y1 $z1 $color $style;
+         -o-box-shadow: $x1 $y1 $z1 $color $style;
+            box-shadow: $x1 $y1 $z1 $color $style;
+}
