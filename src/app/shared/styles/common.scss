@@ -1,0 +1,7 @@
+// common styles starts here
+
+.no-padding {
+	&.container-fluid {
+	    padding: 0;
+	}
+}
