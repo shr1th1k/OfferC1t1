@@ -67,6 +67,7 @@ gulp.task("libs", () => {
         'zone.js/dist/**',
         '@angular/**',
         'bootstrap/**',
+        'bootstrap-select/**',
     ], {cwd: "node_modules/**"}) /* Glob required here. */
         .pipe(gulp.dest("build/lib"));
 });

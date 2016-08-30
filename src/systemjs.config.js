@@ -7,6 +7,8 @@
         '@angular': 'lib/@angular'
     };
 
+    /* '@shared': 'app/shared/components/'*/
+
     // packages tells the System loader how to load when no filename and/or no extension
     var packages = {
         'app': {main: 'index.js', defaultExtension: 'js'},
@@ -30,6 +32,19 @@
     packageNames.forEach(function (pkgName) {
         packages[pkgName] = {main: 'index.js', defaultExtension: 'js'};
     });
+    /*
+        var customPackageList = [
+            {
+                path: '@shared/selectbox',
+                name: 'selectbox'
+            }
+        ];
+
+        // add package entries for angular packages in the form '@angular/common': { main: 'index.js', defaultExtension: 'js' }
+        customPackageList.forEach(function (pkg) {
+            packages[pkg.path] = {main: pkg.name + '.component.js', defaultExtension: 'js'};
+        });
+    */
 
     var config = {
         map: map,
