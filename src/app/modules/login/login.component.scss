@@ -1,9 +1,31 @@
+@import "src/app/shared/styles/style";
+
 .login-main-wrap
 {
 	min-height: 600px;
 	clear:both;
-	
+
 	label {
 		line-height: 18px;
 	}
+}
+
+.forgot-pwd
+{
+	float: right;
+	position: relative;
+	top: -10px;
+
+	a {	
+		color: $black;
+	}
+}
+
+.user-login-btn-wrap {
+	text-align: center;
+}
+
+.dont-ac {
+    border-top: 1px solid $line-seperator;
+    padding-top: 15px;
 }

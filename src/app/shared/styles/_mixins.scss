@@ -24,3 +24,9 @@
          -o-box-shadow: $x1 $y1 $z1 $color $style;
             box-shadow: $x1 $y1 $z1 $color $style;
 }
+
+@function font-url($path, $bool) {
+  @return  $path;
+}
+
+

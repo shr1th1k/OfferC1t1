@@ -44,7 +44,7 @@
         height: 30px;
         position: relative;
         border: 1px solid $btn-border-color;
-        background: $feed-bg-color;
+        background: $head-bg-color;
         float: right !important;
         text-decoration: none !important;
         margin-left: 10px !important;
@@ -120,7 +120,7 @@
         }
         .global-srch-btn:hover {
             background-color: black;
-            color: $feed-bg-color;
+            color: $head-bg-color;
         }
         .col-md-4 {
             padding: 0px;
@@ -131,12 +131,3 @@
         }
     }
 }
-
-.panel-info {
-    & > .panel-heading {
-        color: $btn-border-color;
-        background-color: $feed-bg-color;
-        border-color: $black;
-    }
-}
-

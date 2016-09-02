@@ -1,7 +1,84 @@
 // common styles starts here
+@import "src/app/shared/styles/style";
 
 .no-padding {
 	&.container-fluid {
 	    padding: 0;
 	}
 }
+
+.btn-theme {
+	display: inline-block;
+	background-color: $btn-bg-color;
+	color: #333;
+	font-size: 11px;
+	text-transform: uppercase;
+	font-weight: 700;
+	padding: 8px 10px;
+	@include transition(all, 300ms, ease-in-out);
+
+	&:hover {
+		background-color: #d9a701;
+		color: $white;
+	}
+}
+
+.input-blue {
+	&.checkbox {
+		input[type='checkbox'] {
+			position: absolute;
+			top: 5px;
+			left: 19px;
+			visibility: hidden;
+
+			&:checked + label {
+				background-position: 0 2px;
+			}
+		}
+
+		label {
+			background: url("../../../app/assets/images/icons/input-bg.png") no-repeat 0 -30px;
+			padding: .2em 0 .2em 2em;
+			cursor: pointer;
+			line-height: 0px !important;
+			padding: 8px 20px !important;
+		}
+		&.checked {
+			label {
+				background-position: 0 0;
+			}
+		}
+	}
+	.radio {
+		input[type='radio'] {
+		 	position: absolute;
+		    top: 5px;
+		    left: 19px;
+		    visibility: hidden;
+			&:checked {
+				& + label {
+					background-position: -1px -66px;
+				}
+			}
+		}
+		label {
+			background: url("../../../app/assets/images/icons/input-bg.png") no-repeat 0 -98px;
+			padding: .2em 0 .2em 2em;
+			cursor: pointer;
+			line-height: 8px;
+		}
+		&.checked {
+			label {
+				background-position: 0 -66px;
+			}
+		}
+	}
+}
+/*
+.panel-info {
+    & > .panel-heading {
+        color: $btn-border-color;
+        background-color: $head-bg-color;
+        border-color: $black;
+    }
+}*/
