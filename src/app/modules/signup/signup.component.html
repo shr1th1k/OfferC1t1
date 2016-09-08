@@ -5,46 +5,83 @@
             <div class="panel-title">Sign Up</div>
         </div>
         <div class="panel-body" id="first_section">
-            <form id="oc-form" class="form-horizontal">
+            <form id="oc-form" 
+                   class="form-horizontal" 
+                   (ngSubmit)="onSubmit()"
+                   *ngIf="active"
+                   #usersignup="ngForm">
+                <div [hidden]="!submitted">
+                    Signup form has been submitted!
+                </div>
+                {{diagnostic}}
                 <div class="form-group">
                     <label for="first-name" class="col-md-4 control-label">*First Name </label>
                     <div class="col-md-6">
-                        <input type="text" class="form-control" id="first_name" name="first_name" required
+                        <input type="text" 
+                               class="form-control" 
+                               id="first_name" 
+                               name="first_name" 
+                               [(ngModel)]="model.firstName"
+                               required
                                placeholder="Enter First Name">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="last-name" class="col-md-4 control-label">*Last Name</label>
                     <div class="col-md-6">
-                        <input type="text" class="form-control" id="last_name" name="last_name" required
+                        <input type="text"
+                               class="form-control" 
+                               id="last_name" 
+                               name="last_name" 
+                               [(ngModel)]="model.lastName"
+                               required
                                placeholder="Enter Last Name">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="create-user-name" class="col-md-4 control-label">*Email</label>
                     <div class="col-md-6">
-                        <input type="email" class="form-control" id="email" name="email" required
+                        <input type="email" 
+                               class="form-control" 
+                               id="email" 
+                               name="email" 
+                               [(ngModel)]="model.email"
+                               required
                                placeholder="Enter Email">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="create-password" class="col-md-4 control-label">*Password</label>
                     <div class="col-md-6">
-                        <input type="password" class="form-control" name="password" id="password" required
+                        <input type="password" 
+                               class="form-control" 
+                               name="password" 
+                               [(ngModel)]="model.password"
+                               id="password" 
+                               required
                                placeholder="Create Password">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="Retype-password" class="col-md-4 control-label">*Retype Password</label>
                     <div class="col-md-6">
-                        <input type="password" class="form-control" name="cpassword" id="cpassword" required
+                        <input type="password"
+                               class="form-control" 
+                               name="cpassword"                                
+                               [(ngModel)]="model.cpassword"
+                               id="cpassword" required
                                placeholder="Retype Password">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="phone-number" class="col-md-4 control-label">*Phone Number</label>
                     <div class="col-md-6">
-                        <input type="text" class="form-control" name="contact_number" id="contact_number" required
+                        <input type="text"  
+                               class="form-control" 
+                               name="contact_number" 
+                               [(ngModel)]="model.contactNumber"
+                               id="contact_number" 
+                               required
                                placeholder="Enter Phone Number">
                     </div>
                 </div>
@@ -52,13 +89,22 @@
                     <label class="col-md-4 control-label">*Gender</label>
                     <div class="col-md-2">
 						<span class="input-blue radio">
-						   <input type="radio" id="Male" value="M" name="gender" checked>
+						   <input type="radio" 
+                                  id="Male" 
+                                  value="M" 
+                                   [(ngModel)]="model.gender"
+                                  name="gender" 
+                                  checked>
 						   <label for="Male">Male</label>
 						</span>
                     </div>
                     <div class="col-md-3">
                       <span class="input-blue radio">
-						   <input type="radio" id="Female" value="F" name="gender">
+						   <input type="radio" 
+                                  id="Female" 
+                                   [(ngModel)]="model.gender"                                  
+                                  value="F" 
+                                  name="gender">
 						   <label for="Female">Female</label>
 						</span>
                     </div>
@@ -66,20 +112,36 @@
                 <div class="form-group">
                     <label for="dob" class="col-md-4 control-label">*Date of Birth</label>
                     <div class="col-md-4">
-                        <input type="text" class="form-control date-pic" id="dob" required name="dob"
+                        <input type="text" 
+                               class="form-control date-pic" 
+                               id="dob" 
+                               [(ngModel)]="model.dob"                                  
+                               required 
+                               name="dob"
                                placeholder="Date of Birth">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="pin-code" class="col-md-4 control-label">*Location / Address</label>
-                    <div class="col-md-6"><input id="googleLocation" name="googleLocation" type="text" size="50" placeholder="Ex: JNTU, KPHB, Hyderabad, Telangana" autocomplete="on" class="form-control">
-                        
+                    <div class="col-md-6">
+                        <input id="googleLocation" 
+                               [(ngModel)]="model.area"                                                       
+                               name="googleLocation" 
+                               type="text" 
+                               required 
+                               size="50" 
+                               class="form-control">
                     </div>
                 </div>
                 <div class="form-group">
                     <!-- Submit Button -->
                     <div class="col-md-offset-4 col-md-8">
-                        <input type="submit" id="signup" name="signup" value="Sign Up" class="btn btn-info">
+                        <input type="submit" 
+                               id="signup" 
+                               name="signup" 
+                               value="Sign Up" 
+                               [disabled]="!usersignup.form.valid"
+                               class="btn btn-info">
                     </div>
                 </div>
             </form>

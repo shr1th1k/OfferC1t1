@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { Http, Headers, RequestOptions } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 
@@ -7,16 +7,27 @@ import { AuthService } from '../auth/auth.service';
 
 @Injectable()
 export class UserService {
-	
-	constructor(private authService: AuthService, private http: Http) {}
+	path: string;
+	constructor(private authService: AuthService, private http: Http) {
+		this.path = this.authService.getBaseUrl('user/create')
+	}
 
-	createUser(): void {
-		this.http.get(this.authService.getBaseUrl('users'))
-		 .toPromise()
-		 .then(response => { 
-		 	if (response) {
-		 		console.log(response.json().data); 	
-		 	}
-		 });
+	createUser(model: any): Promise<any> {
+		if (model.cpassword) {
+			delete model.cpassword;
+		}
+
+	    let body = JSON.stringify(model);
+	    let headers = new Headers({ 'Content-Type': 'application/json' });
+	    let options = new RequestOptions({ headers: headers });
+
+	    return this.http.post(this.path, body, options)
+	    		.toPromise()
+	    		.then(response => {
+				 	if (response) {
+				 		console.log(response.json().data); 	
+				 	}
+				 });
+
 	}
 }
