@@ -16,6 +16,8 @@ export class UserService {
 		if (model.cpassword) {
 			delete model.cpassword;
 		}
+		
+		model.status = 1;
 
 	    let body = JSON.stringify(model);
 	    let headers = new Headers({ 'Content-Type': 'application/json' });

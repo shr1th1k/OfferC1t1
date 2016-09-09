@@ -20,6 +20,7 @@ export class SignupComponent {
 	constructor(private userService: UserService) {}
 
 	model = new SignupModel({
+		title: "",
 		firstName: "", 
 		lastName: "", 
 		email: "", 
@@ -42,6 +43,10 @@ export class SignupComponent {
 		this.userService.createUser(this.model);
 	}
 
-	get diagnostic() { return JSON.stringify(this.model); }
+	onChange(selectedvalue) {
+		this.model.title = selectedvalue;
+	}
+
+	//get diagnostic() { return JSON.stringify(this.model); }
 
 }

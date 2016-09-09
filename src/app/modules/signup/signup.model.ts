@@ -1,4 +1,5 @@
 interface Signup {
+    title: string;
     firstName: string;
     lastName: string;
     email: string;
