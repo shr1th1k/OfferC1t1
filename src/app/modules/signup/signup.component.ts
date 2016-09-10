@@ -19,34 +19,28 @@ export class SignupComponent {
 
 	constructor(private userService: UserService) {}
 
-	model = new SignupModel({
-		title: "",
-		firstName: "", 
-		lastName: "", 
-		email: "", 
-		password: "", 
-		cpassword: "", 
-		contactNumber: "", 
-		gender: "", 
-		dob: "", 
-		area: ""
-	});
+	model = new SignupModel();
 
 	submitted = false;
-
-	active = true;
+	loader = false;
+	signuploader = false;
 
 	onSubmit() {
-		this.submitted = true;
-		/*this.active = false;
-		setTimeout(() => this.active = true, 0);*/
-		this.userService.createUser(this.model);
+		this.loader = true;
+		this.signuploader = true;
+
+		this.userService.createUser(this.model)
+	    		.then(response => {
+	    			this.submitted = true;
+	    			this.loader = false;
+				 }, response => {
+	    			this.signuploader = false;
+				 });
 	}
 
 	onChange(selectedvalue) {
-		this.model.title = selectedvalue;
+		this.model.setTitle(selectedvalue);
 	}
 
 	//get diagnostic() { return JSON.stringify(this.model); }
-
 }

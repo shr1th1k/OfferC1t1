@@ -24,12 +24,7 @@ export class UserService {
 	    let options = new RequestOptions({ headers: headers });
 
 	    return this.http.post(this.path, body, options)
-	    		.toPromise()
-	    		.then(response => {
-				 	if (response) {
-				 		console.log(response.json().data); 	
-				 	}
-				 });
+	    		.toPromise();
 
 	}
 }

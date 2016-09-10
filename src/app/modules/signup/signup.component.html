@@ -1,6 +1,10 @@
 <div id="signupbox"
      class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 visitor-form-wrap">
-    <div class="panel panel-info">
+     <div [hidden]="!loader"> 
+          Submitting form data to server... 
+     </div>
+
+    <div class="panel panel-info" [hidden]="signuploader">
         <div class="panel-heading">
             <div class="panel-title">Sign Up</div>
         </div>
@@ -8,7 +12,6 @@
             <form id="oc-form" 
                    class="form-horizontal" 
                    (ngSubmit)="onSubmit()"
-                   *ngIf="active"
                    #usersignup="ngForm">
                 <div [hidden]="!submitted">
                     Signup form has been submitted!
@@ -192,5 +195,15 @@
                 </div>
             </form>
         </div>
+    </div>
+
+    <div [hidden]="!submitted">
+        <div>
+          <p>UR FORM HAS BEEN SUCCESSFULLY SUBMITTED!!!</p>
+          <p>Click the following button to login here</p>
+        </div>
+          <a href="/advertiser-login" class="button-type-1">
+              <span class="a-btn-text">Advertiser Login</span>
+          </a>
     </div>
 </div>
